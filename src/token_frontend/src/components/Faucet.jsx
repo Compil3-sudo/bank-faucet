@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { token_backend , canistedId, createActor} from "../../../declarations/token_backend";
+import { token_backend , canisterId, createActor} from "../../../declarations/token_backend";
 import { AuthClient } from "@dfinity/auth-client";
 
 function Faucet(props) {
@@ -13,7 +13,7 @@ function Faucet(props) {
     const authClient = await AuthClient.create();
     const identity = await authClient.getIdentity();
 
-    const authenticatedCanister = createActor(canistedId, {
+    const authenticatedCanister = createActor(canisterId, {
       agentOptions: {
         identity,
       },
