@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Principal } from '@dfinity/principal';
-import { canistedId, createActor} from "../../../declarations/token_backend";
+import { canisterId, createActor} from "../../../declarations/token_backend";
 import { AuthClient } from "@dfinity/auth-client";
 
 function Transfer() {
@@ -20,7 +20,7 @@ function Transfer() {
     const authClient = await AuthClient.create();
     const identity = await authClient.getIdentity();
 
-    const authenticatedCanister = createActor(canistedId, {
+    const authenticatedCanister = createActor(canisterId, {
       agentOptions: {
         identity,
       },
